@@ -6,11 +6,12 @@ import{Login} from"../pages/login/Login"
 import{Register}from"../pages/register/Register"
 import { Container } from "react-bootstrap";
 import { BookDetails } from "../pages/booKDetails/BookDetails";
+import { VerifyOTP } from "../pages/verifyOTP/VerifyOTP";
 
 const App = () => {
   return (
      <>
- <Toaster position="top-right"/>
+ <Toaster position="top-left"/>
 
      {/* Global Navbar */}
      <Navbar />
@@ -19,9 +20,13 @@ const App = () => {
  <Container className="my-3 py-2">
 
       <Routes>
-        <Route  path="/" Component={Home}/>
+        
+        {/* Auth Routes */}
         <Route path="/login" Component={Login}/>
         <Route path="/register" Component={Register} />
+        <Route path="/verify-otp" Component={VerifyOTP}/>
+        {/* AppRoutes */}
+        <Route  path="/" Component={Home}/>
         <Route  path='/bookDetails' Component={BookDetails}/>
       </Routes>
 
